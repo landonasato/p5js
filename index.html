@@ -1,0 +1,52 @@
+<html class="html">
+    <head>
+        <script src="p5.min.js"></script>
+        <style>
+        .html {
+            overflow:hidden;
+        }
+        </style>
+    </head>
+    <body>
+        <script>
+        //thing
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        //thing v2 and divides to get px and py
+        var posX = w/2;
+        var posY = h/2; 
+        fr = 120;
+        function setup() {
+            //creates canvas
+            frameRate(fr);
+            createCanvas(w,h);
+        }
+
+        function draw() {
+            //creates box
+            background(255);
+            rect(posX,posY,100,100);
+            strokeWeight(0);
+            fill(color('#a7d694'));
+            //W
+            if ((keyIsDown(87)) && (posY > 0)) {
+                posY -=10;
+            }
+            //S
+            if ((keyIsDown(83)) && (posY < h-50)) {
+                posY +=10;
+            }
+            //A
+            if ((keyIsDown(65)) && (posX > 0)) {
+                posX -=10;
+            }
+            //D
+            if ((keyIsDown(68)) && (posX < w-50)) {
+                posX +=10;
+            }
+            //logs things
+            console.log(posX, posY);
+        }
+        </script>
+    </body>
+</html>
